@@ -15,7 +15,8 @@ data "aws_ami" "amazon_linux" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
-
+  subnet_id     = "subnet-0892f8eff444cb826" 
+ 
   user_data = <<-EOF
     #!/bin/bash
     sudo yum update -y
