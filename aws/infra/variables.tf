@@ -15,3 +15,9 @@ variable "aws_region" {
   default     = "us-east-2"
   description = "AWS region for all resources"
 }
+
+variable "project_tag" {
+  type        = string
+  default     = "cc"
+  description = "project tag"
+}
