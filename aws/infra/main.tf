@@ -1,7 +1,7 @@
 provider "aws" {
   region = var.aws_region
 }
-
+/*
 resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
   tags = {
@@ -51,7 +51,7 @@ resource "aws_security_group" "sg-vpc" {
     ipv6_cidr_blocks = ["::/0"]
   }
 }
-
+*/
 data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"]
@@ -65,7 +65,7 @@ data "aws_ami" "amazon_linux" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
-  vpc_security_group_ids = [ aws_security_group.sg-vpc.id ]
+#  vpc_security_group_ids = [ aws_security_group.sg-vpc.id ]
   user_data = <<-EOF
     #!/bin/bash
     sudo yum update -y
