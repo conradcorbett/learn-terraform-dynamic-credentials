@@ -13,7 +13,7 @@ resource "aws_vpc" "example" {
 resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.example.id
   cidr_block = "10.0.0.0/24"
-  availability_zone = "us-west-2a"
+  availability_zone = "us-east-2a"
   tags = {
     Name = "Public Subnet"
     Project = var.project_tag
